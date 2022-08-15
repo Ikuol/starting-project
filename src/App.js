@@ -14,6 +14,8 @@ const App = () =>{
     /*useState syntaxe:const [state, setState] = useState(initialState); */
     /*Usage: Renvoie une valeur avec état et une fonction pour la mettre à jour*/
     /*Une première valeur , qui sera changée dynamiquement au fil du temps*/
+    /*Normalement, les variables « disparaissent » quand la fonction s’achève 
+    mais les variables d’état sont préservées par React. */
     const [movies, setMovies] = useState([]);
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -26,11 +28,22 @@ const App = () =>{
         setMovies(data.Search);
     }
 
+    /*Que fait useEffect ? On utilise ce Hook pour indiquer à React 
+    que notre composant doit exécuter quelque chose après chaque affichage. 
+    React enregistre la fonction passée en argument 
+    (que nous appellerons « effet »), et l’appellera plus tard, 
+    après avoir mis à jour le DOM.*/
+
+    /*Elle est exécutée par défaut après le premier affichage 
+    et après chaque mise à jour. */
+
     useEffect(() =>{
         searchMovies('The Man from Toronto');
     }, []);
 
+    /*JSX syntax*/
     return(
+        /*className instead of class in JSX */
         <div className='app'>
             <h1>MovieLand</h1>
 
