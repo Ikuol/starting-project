@@ -59,7 +59,7 @@ const App = () =>{
                     onClick={() => searchMovies(searchTerm)}
                 />
             </div>
-
+                
             {
                 movies?.length > 0
                     ? (
@@ -76,6 +76,7 @@ const App = () =>{
          </div>
     );
 }
-
+/*La méthode map , permet en effet de prendre le contenu d'un tableau et de
+faire sortir les valeur un par un */
 
 export default App;
